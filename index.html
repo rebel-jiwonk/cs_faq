@@ -89,7 +89,10 @@
         </h1>
 
         <!-- Search Bar -->
-        <input type="text" placeholder="검색어를 입력하세요..." class="search-bar mb-8" id="searchInput">
+        <form action="/faq/search" method="GET" class="w-full max-w-lg">
+            <input type="text" name="query" placeholder="검색어를 입력하세요..." class="search-bar mb-8" id="searchInput">
+            <button type="submit" class="btn btn-primary mt-2">🔍 검색</button>
+        </form>
 
         <!-- Subtitle -->
         <p class="text-lg text-[#808A96] mb-8">
