@@ -1,7 +1,5 @@
 ---
 title: "자꾸 버그가 생기는데요"
-slug: "keep-getting-bugs"
-tags: ["SDK", "RBLN", "Bugs", "Troubleshooting"]
 ---
 
 While we run tests covering most conceivable situations before release, bugs still happen.
