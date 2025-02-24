@@ -20,7 +20,7 @@ Eleventy를 사용한 고객지원 FAQ 웹사이트 입니다. 아래의 가이�
     
 ## 2. 의존성 설치
 
-1.**Node.js 설치**
+1. **Node.js 설치**
 
     [Download NodeJS](https://nodejs.org/en/download)
 
