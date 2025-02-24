@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
 
-const faqDir = path.join(__dirname, "faq/entries");
+const faqDir = path.join(__dirname, "faq");
 const outputFilePath = path.join(__dirname, "assets/faq.json");
 
 const faqData = fs.readdirSync(faqDir)

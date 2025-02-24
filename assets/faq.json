@@ -22,16 +22,6 @@
     "body": " While we run tests covering most conceivable situations before release, bugs still happen. Send us a file of Debug Dump Binaries (DDBs) so that we can provide technical support. The DDB file is safely encrypted and includes all the compilation steps and error logs. Please refer to Trouble and contact our Technical Support Team or email us."
   },
   {
-    "title": "훈련도 되나요?",
-    "slug": "training-possible",
-    "tags": [
-      "ATOM",
-      "RBLN",
-      "training"
-    ],
-    "body": " 현재로서는 추론만 지원하고 있습니다. 향후 훈련 지원이 되면 공지할 계획입니다."
-  },
-  {
     "title": "샘플 코드는 어디에 있나요?",
     "slug": "sample-code",
     "tags": [
@@ -41,5 +31,15 @@
       "sample"
     ],
     "body": " Rebellions Model Zoo provides code examples for different models that you can optimize and test in our RBLN online documentation. You can find the code examples for each model on the following pages under the Task column:  - HuggingFace - Pytorch - Tensorflow"
+  },
+  {
+    "title": "훈련도 되나요?",
+    "slug": "training-possible",
+    "tags": [
+      "ATOM",
+      "RBLN",
+      "training"
+    ],
+    "body": " 현재로서는 추론만 지원하고 있습니다. 향후 훈련 지원이 되면 공지할 계획입니다."
   }
 ]
