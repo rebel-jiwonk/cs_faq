@@ -8,7 +8,7 @@
       "Installation",
       "Beginner"
     ],
-    "body": " RBLN SDK를 사용하기 위해서는 RBLN 드라이버(driver), 컴파일러(compiler), 모델주(Model Zoo)의 적절한 버전을 설치해야 합니다.  1. RBLN 드라이버를 설치합니다. 2. RBLN 컴파일러를 설치합니다. 3. 모델주를 확인하여 원하는 모델이 RBLN SDK로 지원되는지 확인합니다. 4. 샘플코드를 실행하여 문제가 없는지 확인합니다.  더 자세한 내용은 [SDK Installation Guide](https://rebellions.ai/docs/sdk)에서 확인해주세요. "
+    "body": "\nRBLN SDK를 사용하기 위해서는 RBLN 드라이버(driver), 컴파일러(compiler), 모델주(Model Zoo)의 적절한 버전을 설치해야 합니다.\n</br></br>\n1. RBLN 드라이버를 설치합니다.</br>\n2. RBLN 컴파일러를 설치합니다.</br>\n3. 모델주를 확인하여 원하는 모델이 RBLN SDK로 지원되는지 확인합니다.</br>\n4. 샘플코드를 실행하여 문제가 없는지 확인합니다.</br></br>\n\n더 자세한 내용은 [SDK Installation Guide](https://rebellions.ai/docs/sdk)에서 확인해주세요.\n"
   },
   {
     "title": "자꾸 버그가 생기는데요",
@@ -19,7 +19,7 @@
       "Bugs",
       "Troubleshooting"
     ],
-    "body": " While we run tests covering most conceivable situations before release, bugs still happen. Send us a file of Debug Dump Binaries (DDBs) so that we can provide technical support. The DDB file is safely encrypted and includes all the compilation steps and error logs. Please refer to Trouble and contact our Technical Support Team or email us."
+    "body": "\nWhile we run tests covering most conceivable situations before release, bugs still happen.\nSend us a file of Debug Dump Binaries (DDBs) so that we can provide technical support. The DDB file is safely encrypted and includes all the compilation steps and error logs. </br></br>\n\nPlease refer to Trouble and contact our Technical Support Team or email us."
   },
   {
     "title": "샘플 코드는 어디에 있나요?",
@@ -30,7 +30,7 @@
       "code",
       "sample"
     ],
-    "body": " Rebellions Model Zoo provides code examples for different models that you can optimize and test in our RBLN online documentation. You can find the code examples for each model on the following pages under the Task column:  - HuggingFace - Pytorch - Tensorflow"
+    "body": "\nRebellions Model Zoo provides code examples for different models that you can optimize and test in our RBLN online documentation. You can find the code examples for each model on the following pages under the Task column:</br></br>\n\n- HuggingFace\n- Pytorch\n- Tensorflow"
   },
   {
     "title": "훈련도 되나요?",
@@ -40,6 +40,6 @@
       "RBLN",
       "training"
     ],
-    "body": " 현재로서는 추론만 지원하고 있습니다. 향후 훈련 지원이 되면 공지할 계획입니다."
+    "body": "\n현재로서는 추론만 지원하고 있습니다. 향후 훈련 지원이 되면 공지할 계획입니다."
   }
 ]

@@ -16,7 +16,7 @@ const faqData = fs.readdirSync(faqDir)
       title: data.title,
       slug: data.slug,
       tags: data.tags || [],
-      body: content.replace(/\n/g, " ") // Remove line breaks
+      body: content // Remove line breaks
     };
   });
 
