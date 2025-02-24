@@ -3,7 +3,7 @@ const path = require("path");
 const matter = require("gray-matter");
 
 const faqDir = path.join(__dirname, "faq");
-const outputFilePath = path.join(__dirname, "assets/faq.json");
+const outputFilePath = path.join(__dirname, "/faq.json");
 
 const faqData = fs.readdirSync(faqDir)
   .filter(file => file.endsWith(".md"))
@@ -16,7 +16,7 @@ const faqData = fs.readdirSync(faqDir)
       title: data.title,
       slug: data.slug,
       tags: data.tags || [],
-      body: content // Remove line breaks
+      body: content
     };
   });
 

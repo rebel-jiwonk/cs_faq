@@ -8,7 +8,7 @@
       "Installation",
       "Beginner"
     ],
-    "body": "\nRBLN SDK를 사용하기 위해서는 RBLN 드라이버(driver), 컴파일러(compiler), 모델주(Model Zoo)의 적절한 버전을 설치해야 합니다.\n</br></br>\n1. RBLN 드라이버를 설치합니다.</br>\n2. RBLN 컴파일러를 설치합니다.</br>\n3. 모델주를 확인하여 원하는 모델이 RBLN SDK로 지원되는지 확인합니다.</br>\n4. 샘플코드를 실행하여 문제가 없는지 확인합니다.</br></br>\n\n더 자세한 내용은 [SDK Installation Guide](https://rebellions.ai/docs/sdk)에서 확인해주세요.\n"
+    "body": "\nRBLN SDK를 사용하기 위해서는 RBLN 드라이버(driver), 컴파일러(compiler), 모델주(Model Zoo)의 적절한 버전을 설치해야 합니다.\n</br></br>\n1. RBLN 드라이버를 설치합니다.</br>\n2. RBLN 컴파일러를 설치합니다.</br>\n3. 모델주를 확인하여 원하는 모델이 RBLN SDK로 지원되는지 확인합니다.</br>\n4. 샘플코드를 실행하여 문제가 없는지 확인합니다.</br></br>\n\n더 자세한 내용은 <a href=\"https://rebellions.ai/docs/sdk\" class=\"underline\" target=\"_blank\">SDK Installation Guide</a>에서 확인해주세요."
   },
   {
     "title": "자꾸 버그가 생기는데요",
@@ -19,7 +19,7 @@
       "Bugs",
       "Troubleshooting"
     ],
-    "body": "\nWhile we run tests covering most conceivable situations before release, bugs still happen.\nSend us a file of Debug Dump Binaries (DDBs) so that we can provide technical support. The DDB file is safely encrypted and includes all the compilation steps and error logs. </br></br>\n\nPlease refer to Trouble and contact our Technical Support Team or email us."
+    "body": "\nWhile we run tests covering most conceivable situations before release, bugs still happen.\nSend us a file of Debug Dump Binaries (DDBs) so that we can provide technical support. The DDB file is safely encrypted and includes all the compilation steps and error logs. </br></br>\n\nPlease contact our <a href=\"mailto:support@rebellions.ai\" class=\"underline\">Technical Support Team</a>."
   },
   {
     "title": "샘플 코드는 어디에 있나요?",

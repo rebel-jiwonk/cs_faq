@@ -29,7 +29,9 @@
       overflow-y: auto;
       padding-right: 10px;
     }
-
+    a {
+      text-decoration: underline;
+    }
     .faq-container {
       width: 100%;
       max-width: 800px;
@@ -140,7 +142,7 @@
     async function loadFAQs() {
       try {
         console.log("Fetching FAQ data...");
-        const response = await fetch("/assets/faq.json");
+        const response = await fetch("/faq.json");
 
         if (!response.ok) {
           throw new Error("Failed to load faq.json");
