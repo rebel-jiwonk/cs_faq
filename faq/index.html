@@ -150,7 +150,7 @@
         async function loadFAQs() {
             try {
                 console.log("Fetching FAQ data...");
-                const response = await fetch("faq.json");
+                const response = await fetch("/assets/faq.json");
 
                 if (!response.ok) {
                     throw new Error("Failed to load faq.json");
@@ -169,8 +169,7 @@
 
                 faqContainer.innerHTML = faqs.map(faq => `
                     <div class="faq-item">
-                        <h2 class="faq-question">${faq-header}</h2>
-                        <p class="faq-answer">${faq-container}</p>
+                        <h2 class="faq-question"><a href="/faq/${faq.slug}">${faq.title}</a></h2>
                     </div>
                 `).join("");
 
