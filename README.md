@@ -1,3 +1,5 @@
+# Rebellions Customer Support Site
+
 Eleventy를 사용한 고객지원 FAQ 웹사이트 입니다. 아래의 가이드라인에 따라 Markdown 파일을 작성하고, 링크 및 명령어 사용 규칙을 준수해 주세요.
 
 ## 1. 레포지토리 클론
@@ -82,9 +84,9 @@ Markdown으로 작성한 파일이 gray-matter를 통해 (명령어: `node gener
 
 - Markdown 파일을 수정하거나 새로 추가한 후, 아래 명령어를 실행하여 FAQ 데이터를 업데이트합니다.
 
-```bash
-node generate_faq.js
-```
+    ```bash
+    node generate_faq.js
+    ```
 
 - 성공 시 터미널에 아래 메시지가 표시됩니다.
     
