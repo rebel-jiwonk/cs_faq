@@ -57,14 +57,11 @@ Eleventy를 사용한 고객지원 FAQ 웹사이트 입니다. 아래의 가이�
 
 ## 4. Markdown 파일 업로드 및 FAQ 업데이트
 
-<aside>
-💡
+> 💡 Markdown으로 작성한 파일이 gray-matter를 통해 (명령어: `node generate_faq.js`) json으로 자동 변환되면, search.html과 faq/index.html에서 불러오는 구조입니다.
+<br>
 
-Markdown으로 작성한 파일이 gray-matter를 통해 (명령어: `node generate_faq.js`) json으로 자동 변환되면, search.html과 faq/index.html에서 불러오는 구조입니다.
+**1. Markdown 파일 작성/업로드**
 
-</aside>
-
-1. **Markdown 파일 작성/업로드**
     - `faq` 폴더에 Markdown 형식의 FAQ 파일을 작성합니다. faq_x.md 형식으로 명명됩니다.
     - **템플릿 가이드라인**
     
