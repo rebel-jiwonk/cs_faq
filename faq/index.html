@@ -19,6 +19,16 @@
             align-items: center;
             min-height: 100vh;
         }
+        
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+            max-height: 500px; /* Keeps list scrollable */
+            overflow-y: auto;
+            padding-right: 10px;
+        }
 
         .faq-container {
             width: 100%;
@@ -82,7 +92,7 @@
 
         footer {
             position: fixed;
-            bottom: 20px;
+            bottom: 0;
             width: 100%;
             text-align: center;
             background: #3B434B;
@@ -101,79 +111,77 @@
         }
     </style>
 </head>
-<body>
 
+<body>
+    
     <!-- Fixed Logo -->
     <header>
         <a href="/">
-            <img src="/assets/logo.png" alt="Rebellions Logo" class="h-7">
+            <img src="/assets/logo.png" alt="Rebellions Logo" class="h-6">
         </a>
     </header>
 
-    <!-- FAQ Content -->
+    <!-- Fixed Logo -->
     <div class="faq-container">
         <h1 class="faq-header">자주 묻는 질문</h1>
-        <p class="faq-subtitle">자주 묻는 질문을 확인해보세요.</p>
-
-        <div class="faq-item">
-            <div class="faq-question">How do I get started with RBLN SDK? ➕</div>
-            <div class="faq-answer">
-                To get started with RBLN SDK, download RBLN driver, compiler and Model Zoo in appropriate versions.
-                <ul class="mt-2 list-disc ml-6">
-                    <li>Install RBLN Driver.</li>
-                    <li>Install RBLN Compiler.</li>
-                    <li>Check whether RBLN SDK supports your desired model and check the code in Model Zoo.</li>
-                    <li>Run the sample code to ensure there are no issues.</li>
-                </ul>
-                For a detailed installation guide, please refer to SDK Installation Guide.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">How do I check if my model is compatible? ➕</div>
-            <div class="faq-answer">
-                Please refer to the <b>Model Zoo</b> documentation to check supported models. If your model is not listed, you can request compatibility verification through our support team.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">What is the recommended environment for RBLN SDK? ➕</div>
-            <div class="faq-answer">
-                The recommended development environment includes Ubuntu 20.04 or higher, Python 3.8+, and GCC 9.0+. Make sure all dependencies are correctly installed.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">Can I deploy on multiple GPUs? ➕</div>
-            <div class="faq-answer">
-                Yes, RBLN SDK supports multi-GPU deployment using tensor parallelism. Refer to the scaling documentation for details.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">How do I report a bug? ➕</div>
-            <div class="faq-answer">
-                If you encounter any bugs, please submit a report through our <b>support portal</b> or create an issue in our GitHub repository.
-            </div>
+        <div id="faq-list" class="faq-list">
+            <p class="text-center text-gray-500">FAQ를 불러오는 중...</p>
         </div>
     </div>
 
     <!-- Fixed Footer -->
     <footer>
-        <p class="text-sm">📍 경기도 성남시 분당구 정자일로 248 | 📧 contact@rebellions.ai</p>
-        <div class="mt-2">
-            <a href="https://rebellions.ai">Website</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">X</a>
-        </div>
+    <p class="text-sm">📍 경기도 성남시 분당구 정자일로 248</p>
+    <p class="text-sm">📧 contact@rebellions.ai</p>
+    <div class="mt-2 flex justify-center space-x-6 items-center">
+      <a href="https://rebellions.ai" class="hover:text-gray-300">Website</a>
+      <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg" alt="LinkedIn" class="h-5 w-5">
+        <span>LinkedIn</span>
+      </a>
+      <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/x.svg" alt="X" class="h-5 w-5">
+        <span>X</span>
+      </a>
+    </div>
     </footer>
 
     <script>
-        document.querySelectorAll(".faq-question").forEach(item => {
-            item.addEventListener("click", () => {
-                item.parentNode.classList.toggle("active");
-            });
-        });
+        async function loadFAQs() {
+            try {
+                console.log("Fetching FAQ data...");
+                const response = await fetch("faq.json");
+
+                if (!response.ok) {
+                    throw new Error("Failed to load faq.json");
+                }
+
+                const faqs = await response.json();
+                console.log("FAQ data loaded:", faqs);
+
+                const faqContainer = document.getElementById("faq-list");
+                faqContainer.innerHTML = ""; // Clear loading text
+
+                if (faqs.length === 0) {
+                    faqContainer.innerHTML = "<p class='text-center text-gray-500'>등록된 FAQ가 없습니다.</p>";
+                    return;
+                }
+
+                faqContainer.innerHTML = faqs.map(faq => `
+                    <div class="faq-item">
+                        <h2 class="faq-question">${faq-header}</h2>
+                        <p class="faq-answer">${faq-container}</p>
+                    </div>
+                `).join("");
+
+                console.log("FAQs successfully inserted.");
+            } catch (error) {
+                console.error("Error loading FAQs:", error);
+                document.getElementById("faq-list").innerHTML = "<p class='text-center text-red-500'>FAQ를 불러오는 중 오류가 발생했습니다.</p>";
+            }
+        }
+
+        window.onload = loadFAQs;
     </script>
 
 </body>
