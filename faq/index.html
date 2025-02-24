@@ -19,7 +19,12 @@
       align-items: center;
       min-height: 100vh;
     }
-    
+
+    /* Ensure line breaks in answer text */
+    .answer-body {
+      white-space: pre-line;
+    }
+
     .faq-list {
       display: flex;
       flex-direction: column;
@@ -29,14 +34,18 @@
       overflow-y: auto;
       padding-right: 10px;
     }
+
     a {
       text-decoration: underline;
     }
+
     .faq-container {
       width: 100%;
       max-width: 800px;
       margin-top: 100px;
       padding-bottom: 100px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     .faq-item {
@@ -62,12 +71,15 @@
       background: #D9E4ED;
     }
 
+    /* Answer container: hidden by default, with proper padding and restricted width */
     .faq-answer {
       display: none;
       padding: 16px;
       font-size: 1rem;
       line-height: 1.5;
       border-top: 1px solid #E2EBF2;
+      /* Optional: restrict horizontal width and center text if desired */
+      max-width: 100%;  /* or e.g., max-width: 600px; margin: 0 auto; */
     }
 
     .faq-header {
@@ -127,7 +139,7 @@
     <p class="text-sm">📧 contact@rebellions.ai</p>
     <div class="mt-2 flex justify-center space-x-6 items-center">
       <a href="https://rebellions.ai" class="hover:text-gray-300">Website</a>
-      <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
+      <a href="https://www.linkedin.com/company/rebellions-ai/" class="hover:text-gray-300 flex items-center space-x-1">
         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg" alt="LinkedIn" class="h-5 w-5">
         <span>LinkedIn</span>
       </a>
@@ -159,13 +171,14 @@
           return;
         }
 
+        // Ensure the answer container uses both "faq-answer" and "answer-body" classes.
         faqContainer.innerHTML = faqs.map(faq => `
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">
               <span>${faq.title}</span>
               <button class="toggle-btn text-xl">+</button>
             </div>
-            <div class="faq-answer">${faq.body}</div>
+            <div class="faq-answer answer-body">${faq.body}</div>
           </div>
         `).join("");
 

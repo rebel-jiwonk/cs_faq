@@ -21,5 +21,5 @@ const faqData = fs.readdirSync(faqDir)
   });
 
 fs.writeFileSync(outputFilePath, JSON.stringify(faqData, null, 2), "utf-8");
-console.log("✅ FAQ JSON generated!");
+console.log("✅ (๑•᎑•๑)♬* 성공이에요");
 

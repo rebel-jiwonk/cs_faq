@@ -1,152 +1,173 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>검색 결과 | 고객지원</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-        /* Fixed Elements */
-        
-        header {
-            position: fixed;
-            top: 10px;
-            left: 20px;
-        }
-        .answer-body {
-            white-space: pre-line;
-        }
-        body {
-            font-family: 'Pretendard', sans-serif;
-            background-color: #EFF2F5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        a {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 700px;
-            width: 100%;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(59, 67, 75, 0.1);
-            min-height: 500px;
-        }
-        .search-title {
-            font-size: 1.75rem;
-            font-weight: bold;
-            color: #3B434B;
-        }
-        .search-result {
-            border: 1px solid #D9E4ED;
-            background: #ffffff;
-            padding: 16px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(59, 67, 75, 0.08);
-            transition: 0.3s ease-in-out;
-        }
-        .search-result:hover {
-            background: #F8FBFF;
-            transform: translateY(-2px);
-        }
-        .search-result a {
-            color: #3B434B;
-            font-weight: 600;
-        }
-        .search-result a:hover {
-            color: #808A96;
-            text-decoration: underline;
-        }
-        .no-results {
-            color: #808A96;
-            font-size: 1rem;
-            text-align: center;
-            margin-top: 20px;
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            background: #3B434B;
-            color: white;
-            padding: 15px 0;
-        }
-        footer a {
-            color: white;
-            margin: 0 10px;
-            transition: 0.3s ease-in-out;
-        }
-        footer a:hover {
-            color: #D9E4ED;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>검색 결과 | 고객지원</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    /* Fixed Elements */
+    header {
+      position: fixed;
+      top: 10px;
+      left: 20px;
+    }
+
+    .answer-body {
+      white-space: pre-line;
+    }
+
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background-color: #EFF2F5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+    .container {
+        max-width: 700px;
+        width: 100%;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(59, 67, 75, 0.1);
+        min-height: 500px;
+        margin-bottom: 120px; /* Add extra bottom margin to allow scrolling */
+    }
+    .search-title {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #3B434B;
+    }
+    .search-result {
+      border: 1px solid #D9E4ED;
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(59, 67, 75, 0.08);
+      transition: 0.3s ease-in-out;
+      margin-bottom: 1rem;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      display: none;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: #3B434B;
+      color: white;
+      padding: 15px 0;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      transition: 0.3s ease-in-out;
+    }
+
+    footer a:hover {
+      color: #D9E4ED;
+    }
+  </style>
 </head>
 <body>
-    <!-- Fixed Logo -->
-    <header class="absolute top-6 left-12">
-        <a href="/faq/index.html">
-            <img src="/assets/logo.png" alt="Rebellions Logo" class="h-6">
-        </a>
-    </header>
-    <!-- Search Title -->
-    <div class="container text-center mt-20">
-        <h1 class="search-title mb-6">🔍 검색 결과</h1>
-        <div id="results" class="space-y-4"></div>
+  <!-- Fixed Logo -->
+  <header class="absolute top-6 left-12">
+    <a href="/faq/index.html">
+      <img src="/assets/logo.png" alt="Rebellions Logo" class="h-6">
+    </a>
+  </header>
+
+  <!-- Search Container -->
+  <div class="container text-center mt-20">
+    <h1 class="search-title mb-6">🔍 검색 결과</h1>
+    <div id="results" class="space-y-4"></div>
+  </div>
+
+  <!-- Fixed Footer -->
+  <footer>
+    <p class="text-sm">📍 경기도 성남시 분당구 정자일로 248</p>
+    <p class="text-sm">📧 contact@rebellions.ai</p>
+    <div class="mt-2 flex justify-center space-x-6 items-center">
+      <a href="https://rebellions.ai" class="hover:text-gray-300">Website</a>
+      <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg" alt="LinkedIn" class="h-5 w-5">
+        <span>LinkedIn</span>
+      </a>
+      <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
+        <img src="/assets/X.svg" alt="X" class="h-5 w-5">
+        <span>Twitter</span>
+      </a>
     </div>
-    <!-- Fixed Footer -->
-    <footer>
-        <p class="text-sm">📍 경기도 성남시 분당구 정자일로 248</p>
-        <p class="text-sm">📧 contact@rebellions.ai</p>
-        <div class="mt-2 flex justify-center space-x-6 items-center">
-            <a href="https://rebellions.ai" class="hover:text-gray-300">Website</a>
-            <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg" alt="LinkedIn" class="h-5 w-5">
-                <span>LinkedIn</span>
-            </a>
-            <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
-                <img src="/assets/X.svg" alt="X" class="h-5 w-5">
-                <span>Twitter</span>
-            </a>
+  </footer>
+
+  <script>
+    // Toggle the collapsible answer when a question is clicked
+    function toggleFaq(element) {
+      const answerDiv = element.nextElementSibling;
+      const toggleButton = element.querySelector('.toggle-btn');
+      if (answerDiv.style.display === "block") {
+        answerDiv.style.display = "none";
+        toggleButton.innerText = "+";
+      } else {
+        answerDiv.style.display = "block";
+        toggleButton.innerText = "−";
+      }
+    }
+
+    async function searchFAQs() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get("query")?.toLowerCase() || "";
+      const response = await fetch("/faq.json");
+      const faqs = await response.json();
+      const resultsContainer = document.getElementById("results");
+
+      // Filter FAQs by title or body containing the search query
+      const filtered = faqs.filter(faq =>
+        faq.title.toLowerCase().includes(query) ||
+        faq.body.toLowerCase().includes(query)
+      );
+
+      // If no results found, display a message
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = "<p class='no-results'>❌ 검색 결과가 없습니다.</p>";
+        return;
+      }
+
+      // Generate collapsible titles for each matching FAQ
+      resultsContainer.innerHTML = filtered.map(faq => `
+        <div class="search-result">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="text-lg text-center">${faq.title}</span>
+            <button class="toggle-btn text-xl">+</button>
+          </div>
+          <div class="faq-answer answer-body text-left mt-4">
+            ${faq.body}
+          </div>
         </div>
-    </footer>
-    <script>
-        async function searchFAQs() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const query = urlParams.get("query")?.toLowerCase() || "";
-            const response = await fetch("/faq.json");
-            const faqs = await response.json();
-            const resultsContainer = document.getElementById("results");
+      `).join("");
+    }
 
-            // 필터링: 제목 또는 본문에 포함된 검색어 찾기
-            const filtered = faqs.filter(faq =>
-                faq.title.toLowerCase().includes(query) ||
-                faq.body.toLowerCase().includes(query)
-            );
-
-            // 검색 결과 없음
-            if (filtered.length === 0) {
-                resultsContainer.innerHTML = "<p class='no-results'>❌ 검색 결과가 없습니다.</p>";
-                return;
-            }
-
-            // 검색 결과 출력
-            resultsContainer.innerHTML = filtered.map(faq => `
-                <div class="search-result">
-                    <h2 class="mt-3 text-lg text-center">${faq.title}</h2>
-                    <div class="mt-4 text-left answer-body">
-                        ${faq.body}
-                </div>
-            `).join("");
-        }
-
-        searchFAQs();
-    </script>
+    searchFAQs();
+  </script>
 </body>
 </html>

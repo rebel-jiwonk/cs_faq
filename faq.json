@@ -2,13 +2,8 @@
   {
     "title": "RBLN SDK를 어떻게 사용하나요?",
     "slug": "getting-started-rbln",
-    "tags": [
-      "SDK",
-      "RBLN",
-      "Installation",
-      "Beginner"
-    ],
-    "body": "\nRBLN SDK를 사용하기 위해서는 RBLN 드라이버(driver), 컴파일러(compiler), 모델주(Model Zoo)의 적절한 버전을 설치해야 합니다.\n</br></br>\n1. RBLN 드라이버를 설치합니다.</br>\n2. RBLN 컴파일러를 설치합니다.</br>\n3. 모델주를 확인하여 원하는 모델이 RBLN SDK로 지원되는지 확인합니다.</br>\n4. 샘플코드를 실행하여 문제가 없는지 확인합니다.</br></br>\n\n더 자세한 내용은 <a href=\"https://rebellions.ai/docs/sdk\" class=\"underline\" target=\"_blank\">SDK Installation Guide</a>에서 확인해주세요."
+    "tags": [],
+    "body": "\nRBLN SDK를 사용하기 위해서는 RBLN 드라이버(driver), 컴파일러(compiler), 모델주(Model Zoo)의 적절한 버전을 설치해야 합니다.\n</br>\n1. RBLN 드라이버를 설치합니다.\n2. RBLN 컴파일러를 설치합니다.\n3. 모델주를 확인하여 원하는 모델이 RBLN SDK로 지원되는지 확인합니다.\n4. 샘플코드를 실행하여 문제가 없는지 확인합니다.\n\n더 자세한 내용은 <a href=\"https://rebellions.ai/docs/sdk\" class=\"underline\" target=\"_blank\">SDK Installation Guide</a>에서 확인해주세요."
   },
   {
     "title": "자꾸 버그가 생기는데요",
@@ -24,12 +19,7 @@
   {
     "title": "샘플 코드는 어디에 있나요?",
     "slug": "sample-code",
-    "tags": [
-      "SDK",
-      "RBLN",
-      "code",
-      "sample"
-    ],
+    "tags": [],
     "body": "\nRebellions Model Zoo provides code examples for different models that you can optimize and test in our RBLN online documentation. You can find the code examples for each model on the following pages under the Task column:</br></br>\n\n- HuggingFace\n- Pytorch\n- Tensorflow"
   },
   {
