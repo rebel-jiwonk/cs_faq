@@ -1,5 +1,7 @@
 # Rebellions Customer Support Site
 
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/23c124b0-3425-4c3e-a776-fbd6e202c790"/>
+<br>
 Eleventy를 사용한 고객지원 FAQ 웹사이트 입니다. 아래의 가이드라인에 따라 Markdown 파일을 작성하고, 링크 및 명령어 사용 규칙을 준수해 주세요.
 
 ## 1. 레포지토리 클론
